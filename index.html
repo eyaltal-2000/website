@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Trirong">
+  <title>Eyal Tal Ph.D.</title>
+  <style>
+    body {
+      font-family: "Trirong";
+      line-height: 15pt;
+    }
+
+    /* CSS to style the navigation menu */
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      background-color: rgba(241, 241, 241, 0.2);
+      position: fixed;
+      top: 0;
+      right: 0;
+      left: 0;
+      z-index: 3;
+      text-align: center;
+    }
+
+    .menu {
+      display: inline-block;
+      position: relative; /* Added */
+    }
+
+    li {
+      display: inline-block;
+      position: relative; /* Added */
+    }
+
+    li a {
+      display: block;
+      color: #333;
+      text-align: center;
+      padding: 14px 20px;
+      text-decoration: none;
+    }
+
+    li a:hover {
+      background-color: #ddd;
+    }
+
+    /* CSS to style the submenus */
+    ul.submenu {
+      font-size: 8pt;
+      text-align: right;
+      display: none;
+      position: absolute;
+      background-color: #f1f1f1;
+      min-width: 160px; /* Adjusted */
+      top: 100%; /* Added */
+      left: 0; /* Added */
+      z-index: 3; /* Added */
+      max-height: calc(100vh - 46px); /* Added */
+      overflow-y: auto; /* Added */
+    }
+
+    li:hover > ul.submenu { /* Updated */
+      display: block;
+    }
+
+    li.submenu-item {
+      display: block;
+    }
+
+    li.submenu-item a {
+      line-height: 12px; /* Adjusted */
+    }
+
+    /* CSS to style the transparent image container */
+    .image-container1 {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-image: url('/me1.png');
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center center;
+      opacity: 0.5;
+      z-index: 1;
+      transition: opacity 0.1s ease;
+    }
+
+    .image-container2 {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-image: url('/me2.png');
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center center;
+      opacity: 0.2;
+      z-index: 1;
+      transition: opacity 0.1s ease;
+    }
+
+    /* CSS to style the text block */
+    .text-block-left {
+      top: 22%;
+      left: 5%;
+      transform: translate(0, -50%);
+      width: 100%;
+      max-width: 220px;
+      text-align: left;
+      z-index: 2;
+      position: absolute;
+    }
+
+    .text-block-left h1 {
+      font-size: 22px;
+      margin-bottom: 10px;
+      width: 100%;
+      position: top;
+    }
+
+    .text-block-left p1 {
+      font-size: 15px;
+      color: #555;
+      width: 100%;
+      position: fixed;
+    }
+
+    .text-block-left p2 {
+      font-size: 15px;
+      color: #555;
+      width: 100%;
+      margin-top: 40%;
+      position: fixed;
+    }
+
+    .text-block-left p3 {
+      font-size: 15px;
+      color: #555;
+      width: 100%;
+      margin-top: 62%;
+      position: fixed;
+    }
+
+    .text-block-right {
+      top: 21.5%;
+      right: 5%;
+      transform: translate(0, -50%);
+      width: 100%;
+      max-width: 220px;
+      text-align: left;
+      z-index: 2;
+      position: absolute;
+    }
+
+    .text-block-right h2 {
+      font-size: 22px;
+      margin-bottom: 10px;
+      width: 100%;
+      position: top;
+    }
+
+    .text-block-right p4 {
+      font-size: 15px;
+      color: #555;
+      width: 100%;
+      position: fixed;
+    }
+
+    .text-block-right p5 {
+      font-size: 15px;
+      color: #555;
+      width: 100%;
+      margin-top: 49%;
+      position: fixed;
+    }
+
+
+  </style>
+</head>
+<body>
+  <ul>
+    <div class="menu">
+      <li>
+        <a href="#">Published Papers</a>
+        <ul class="submenu">
+          <li class="submenu-item"><a href="https://journals.publishing.umich.edu/ergo/article/id/2621/">Cruel Intentions and Evil Deeds</a></li>
+        </ul>
+      </li>
+    </div>
+    <div class="menu">
+      <li>
+        <a href="#">Teaching</a>
+        <ul class="submenu">
+          <li class="submenu-item"><a href="#">Introduction to Logic</a></li>
+        </ul>
+      </li>
+    </div>
+    <div class="menu">
+      <li>
+        <a href="#">Home</a>
+      </li>
+    </div>
+    <div class="menu">
+      <li>
+        <a href="#">Contact</a>
+        <ul class="submenu">
+          <li class="submenu-item"><a href="#">eyaltal@arizona.edu</a></li>
+        </ul>
+      </li>
+    </div>
+    <div class="menu">
+      <li>
+        <a href="#">Javascript Projects</a>
+        <ul class="submenu">
+          <li class="submenu-item"><a href="#">Coming soon...</a></li>
+        </ul>
+      </li>
+    </div>
+  </ul>
+
+  <!-- Transparent image container -->
+  <div class="image-container1"></div>
+  <div class="image-container2"></div>
+
+  <!-- Text block -->
+  <div class="text-block-left">
+    <h1 id="header1">. . . Hello!</h1>
+    <p1 id="paragraph1">According to ChatGPT I am a "renowned academic who specializes in logic, rationality, and ethics."</p1>
+    <p2 id="paragraph2">This is correct if you ignore the "renowned" part.</p2>
+    <p3 id="paragraph3">I am indeed an experienced researcher and writer with those specialities.</p3>
+  </div>
+  
+  <div class="text-block-right">
+    <h2 id="header2">However...</h2>
+    <p4 id="paragraph4">These days I'm transitioning into a career at the intersection of technical writing, web-development, and marketing.</p4>
+    <p5 id="paragraph5">Check out my academic past, and my technical future.</p5>
+  </div>
+
+  <script>
+    // Mouse-tracking for image opacity code
+    const imageContainer1 = document.querySelector('.image-container1');
+    const imageContainer2 = document.querySelector('.image-container2');
+
+    function handleMouseMove(event) {
+      const mouseX = event.clientX;
+      const windowWidth = window.innerWidth;
+      const opacity = mouseX / windowWidth - 0.3;
+
+      imageContainer1.style.opacity = 1 - (2 * opacity);
+      imageContainer2.style.opacity = opacity;
+    }
+
+    window.addEventListener('mousemove', handleMouseMove);
+
+    // Text-blocks code
+    let beenHereBefore = localStorage.getItem('firstVisit');
+    let headerTypingSpeed = 70; // Adjust typing speed for headers 
+    let paragraphTypingSpeed = 30; // Adjust typing speed for paragraphs
+    let textPause = 1400; // Adjust pause duration 
+
+
+    const header1Element = document.getElementById('header1');
+    const header1Text = header1Element.innerHTML.trim();
+    header1Element.innerHTML = '';
+
+    const header2Element = document.getElementById('header2');
+    const header2Text = header2Element.innerHTML.trim();
+    header2Element.innerHTML = '';
+    let header2Index = 0;
+
+    const paragraph1Element = document.getElementById('paragraph1');
+    const paragraph1Text = paragraph1Element.innerHTML.trim();
+    paragraph1Element.innerHTML = '';
+    let paragraph1Index = 0;
+
+    const paragraph2Element = document.getElementById('paragraph2');
+    const paragraph2Text = paragraph2Element.innerHTML.trim();
+    paragraph2Element.innerHTML = '';
+    let paragraph2Index = 0;
+    
+    const paragraph3Element = document.getElementById('paragraph3');
+    const paragraph3Text = paragraph3Element.innerHTML.trim();
+    paragraph3Element.innerHTML = '';
+    let paragraph3Index = 0;
+
+    const paragraph4Element = document.getElementById('paragraph4');
+    const paragraph4Text = paragraph4Element.innerHTML.trim();
+    paragraph4Element.innerHTML = '';
+    let paragraph4Index = 0;
+
+    const paragraph5Element = document.getElementById('paragraph5');
+    const paragraph5Text = paragraph5Element.innerHTML.trim();
+    paragraph5Element.innerHTML = '';
+    let paragraph5Index = 0;
+
+    let header1Index = 0;
+
+    function typeHeader1() {
+      if (header1Index < header1Text.length) {
+        header1Element.innerHTML += header1Text.charAt(header1Index);
+        header1Index++;
+        setTimeout(typeHeader1, headerTypingSpeed);
+      } else {
+        localStorage.setItem('firstVisit', true);
+        setTimeout(typeParagraph1, textPause); // Header animation completed, start paragraph animation after 1-second pause
+      }
+    }
+
+    function typeParagraph1() {
+      if (paragraph1Index < paragraph1Text.length) {
+        paragraph1Element.innerHTML += paragraph1Text.charAt(paragraph1Index);
+        paragraph1Index++;
+        setTimeout(typeParagraph1, paragraphTypingSpeed);
+      } else {
+        setTimeout(typeParagraph2, textPause);
+      }
+    }
+
+    function typeParagraph2() {
+      if (paragraph2Index < paragraph2Text.length) {
+        paragraph2Element.innerHTML += paragraph2Text.charAt(paragraph2Index);
+        paragraph2Index++;
+        setTimeout(typeParagraph2, paragraphTypingSpeed);
+      } else {
+        setTimeout(typeParagraph3, textPause);
+      }
+    }
+
+    function typeParagraph3() {
+      if (paragraph3Index < paragraph3Text.length) {
+        paragraph3Element.innerHTML += paragraph3Text.charAt(paragraph3Index);
+        paragraph3Index++;
+        setTimeout(typeParagraph3, paragraphTypingSpeed);
+      } else {
+        setTimeout(typeHeader2, 2000);
+      }
+    }
+    
+    function typeHeader2() {
+      if (header2Index < header2Text.length) {
+        header2Element.innerHTML += header2Text.charAt(header2Index);
+        header2Index++;
+        setTimeout(typeHeader2, paragraphTypingSpeed);
+      } else {
+        setTimeout(typeParagraph4, textPause);
+      }
+    }
+
+    function typeParagraph4() {
+      if (paragraph4Index < paragraph4Text.length) {
+        paragraph4Element.innerHTML += paragraph4Text.charAt(paragraph4Index);
+        paragraph4Index++;
+        setTimeout(typeParagraph4, paragraphTypingSpeed);
+      } else {
+        setTimeout(typeParagraph5, textPause);
+      }
+    }
+
+    function typeParagraph5() {
+      if (paragraph5Index < paragraph5Text.length) {
+        paragraph5Element.innerHTML += paragraph5Text.charAt(paragraph5Index);
+        paragraph5Index++;
+        setTimeout(typeParagraph5, paragraphTypingSpeed);
+      }
+    }
+    
+    // Check if it's the first visit, if yes, run the typing animation
+    if (!beenHereBefore) {
+      typeHeader1();
+    } else {
+      header1Element.innerHTML = header1Text;
+      header2Element.innerHTML = header2Text;
+      paragraph1Element.innerHTML = paragraph1Text;
+      paragraph2Element.innerHTML = paragraph2Text;
+      paragraph3Element.innerHTML = paragraph3Text;
+      paragraph4Element.innerHTML = paragraph4Text;
+      paragraph5Element.innerHTML = paragraph4Text;
+    }
+
+
+  </script>
+</body>
+</html>
