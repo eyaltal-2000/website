@@ -79,7 +79,7 @@
       right: 0;
       bottom: 0;
       left: 0;
-      background-image: url('https://raw.githubusercontent.com/eyaltal-2000/website/main/me1.png');
+      background-image: url('images/me1.png');
       background-repeat: no-repeat;
       background-size: contain;
       background-position: center center;
@@ -94,7 +94,7 @@
       right: 0;
       bottom: 0;
       left: 0;
-      background-image: url('https://raw.githubusercontent.com/eyaltal-2000/website/main/me2.png');
+      background-image: url('images/me2.png');
       background-repeat: no-repeat;
       background-size: contain;
       background-position: center center;
@@ -137,14 +137,6 @@
       position: fixed;
     }
 
-    .text-block-left p3 {
-      font-size: 15px;
-      color: #555;
-      width: 100%;
-      margin-top: 62%;
-      position: fixed;
-    }
-
     .text-block-right {
       top: 21.5%;
       right: 5%;
@@ -163,14 +155,14 @@
       position: top;
     }
 
-    .text-block-right p4 {
+    .text-block-right p3 {
       font-size: 15px;
       color: #555;
       width: 100%;
       position: fixed;
     }
 
-    .text-block-right p5 {
+    .text-block-right p4 {
       font-size: 15px;
       color: #555;
       width: 100%;
@@ -187,14 +179,7 @@
       <li>
         <a href="#">Published Papers</a>
         <ul class="submenu">
-          <li class="submenu-item"><a href="https://journals.publishing.umich.edu/ergo/article/id/2621">Cruel Intentions and Evil Deeds</a></li>
-          <li class="submenu-item"><a href="https://www.cambridge.org/core/journals/journal-of-the-american-philosophical-association/article/abs/dilemma-for-higherlevel-suspension/4C3948DB4E9A702B995A1A078346DFF9">A Dilemma for Higher-Level Suspension</a></li>
-          <li class="submenu-item"><a href="https://www.routledge.com/Epistemic-Dilemmas-New-Arguments-New-Angles/McCain-Stapleford-Steup/p/book/9780367681425">Knowledge-First Evidentialism and the Dilemmas of Self-Impact</a></li>
-          <li class="submenu-item"><a href="https://link.springer.com/article/10.1007/s11098-020-01574-0">Is Higher-Order Evidence Evidence?</a></li>
-          <li class="submenu-item"><a href="https://www.cambridge.org/core/services/aop-cambridge-core/content/view/6C411D7A64D95C5B54D23DF30EACAAA7/S1742360018000552a.pdf/disagreement-and-easy-bootstrapping.pdf">Disagreement and Easy Bootstrapping</a></li>
-          <li class="submenu-item"><a href="https://link.springer.com/article/10.1007/s10670-018-0042-4">Self-Intimation, Infallibility, and Higher-Order Evidence</a></li>
-          <li class="submenu-item"><a href="https://onlinelibrary.wiley.com/doi/abs/10.1111/nous.12101">Is Evidence of Evidence Evidence?</a></li>
-          <li class="submenu-item"><a href="https://academic.oup.com/analysis/article-abstract/75/4/557/132233?redirectedFrom=fulltext">Evidence of Evidence is Evidence</a></li>
+          <li class="submenu-item"><a href="https://journals.publishing.umich.edu/ergo/article/id/2621/">Cruel Intentions and Evil Deeds</a></li>
         </ul>
       </li>
     </div>
@@ -202,7 +187,7 @@
       <li>
         <a href="#">Teaching</a>
         <ul class="submenu">
-          <li class="submenu-item"><a href="#">Coming soon...</a></li>
+          <li class="submenu-item"><a href="#">Introduction to Logic</a></li>
         </ul>
       </li>
     </div>
@@ -238,12 +223,13 @@
     <h1 id="header1">. . . Hello!</h1>
     <p1 id="paragraph1">According to ChatGPT I am a "renowned academic who specializes in logic, rationality, and ethics."</p1>
     <p2 id="paragraph2">This is correct if you ignore the "renowned" part.</p2>
+    
   </div>
   
   <div class="text-block-right">
     <h2 id="header2">However...</h2>
-    <p4 id="paragraph4">These days I'm transitioning into a career at the intersection of technical writing, web-development, and marketing.</p4>
-    <p5 id="paragraph5">Check out my academic past, and my technical future.</p5>
+    <p3 id="paragraph3">These days I'm transitioning into a career at the intersection of technical writing, web-development, and marketing.</p3>
+    <p4 id="paragraph4">Check out my academic past, and my technical future.</p4>
   </div>
 
   <script>
@@ -292,16 +278,13 @@
     const paragraph3Text = paragraph3Element.innerHTML.trim();
     paragraph3Element.innerHTML = '';
     let paragraph3Index = 0;
-
+    
     const paragraph4Element = document.getElementById('paragraph4');
     const paragraph4Text = paragraph4Element.innerHTML.trim();
     paragraph4Element.innerHTML = '';
     let paragraph4Index = 0;
 
-    const paragraph5Element = document.getElementById('paragraph5');
-    const paragraph5Text = paragraph5Element.innerHTML.trim();
-    paragraph5Element.innerHTML = '';
-    let paragraph5Index = 0;
+    
 
     let header1Index = 0;
 
@@ -312,7 +295,7 @@
         setTimeout(typeHeader1, headerTypingSpeed);
       } else {
         localStorage.setItem('firstVisit', true);
-        setTimeout(typeParagraph1, textPause); // Header animation completed, start paragraph animation after 1-second pause
+        setTimeout(typeParagraph1, 2000); // Header animation completed, start paragraph animation after 1-second pause
       }
     }
 
@@ -332,16 +315,6 @@
         paragraph2Index++;
         setTimeout(typeParagraph2, paragraphTypingSpeed);
       } else {
-        setTimeout(typeParagraph3, textPause);
-      }
-    }
-
-    function typeParagraph3() {
-      if (paragraph3Index < paragraph3Text.length) {
-        paragraph3Element.innerHTML += paragraph3Text.charAt(paragraph3Index);
-        paragraph3Index++;
-        setTimeout(typeParagraph3, paragraphTypingSpeed);
-      } else {
         setTimeout(typeHeader2, 2000);
       }
     }
@@ -352,6 +325,16 @@
         header2Index++;
         setTimeout(typeHeader2, paragraphTypingSpeed);
       } else {
+        setTimeout(typeParagraph3, textPause);
+      }
+    }
+
+    function typeParagraph3() {
+      if (paragraph3Index < paragraph3Text.length) {
+        paragraph3Element.innerHTML += paragraph3Text.charAt(paragraph3Index);
+        paragraph3Index++;
+        setTimeout(typeParagraph3, paragraphTypingSpeed);
+      } else {
         setTimeout(typeParagraph4, textPause);
       }
     }
@@ -361,19 +344,10 @@
         paragraph4Element.innerHTML += paragraph4Text.charAt(paragraph4Index);
         paragraph4Index++;
         setTimeout(typeParagraph4, paragraphTypingSpeed);
-      } else {
-        setTimeout(typeParagraph5, textPause);
-      }
-    }
-
-    function typeParagraph5() {
-      if (paragraph5Index < paragraph5Text.length) {
-        paragraph5Element.innerHTML += paragraph5Text.charAt(paragraph5Index);
-        paragraph5Index++;
-        setTimeout(typeParagraph5, paragraphTypingSpeed);
       }
     }
     
+    typeHeader1();
     // Check if it's the first visit, if yes, run the typing animation
     if (!beenHereBefore) {
       typeHeader1();
@@ -384,7 +358,7 @@
       paragraph2Element.innerHTML = paragraph2Text;
       paragraph3Element.innerHTML = paragraph3Text;
       paragraph4Element.innerHTML = paragraph4Text;
-      paragraph5Element.innerHTML = paragraph5Text;
+      paragraph5Element.innerHTML = paragraph4Text;
     }
 
 
